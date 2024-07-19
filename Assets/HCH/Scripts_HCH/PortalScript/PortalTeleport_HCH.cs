@@ -11,6 +11,9 @@ public class PortalTeleport_HCH : MonoBehaviour
 
     bool isPlayerOverlapping = false;
 
+    // 나중에 오브젝트는 통과 못하게 해야함
+    public LayerMask ignoreTargetMask;
+
     private void Start()
     {
         col = GetComponent<BoxCollider>();

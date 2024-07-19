@@ -11,7 +11,6 @@ public class Player_HCH : MonoBehaviour
     float jumpMoveSpeedClamp = 10;
 
     public Transform rotateTarget;
-    BoxCollider feetCol;
     ConstantForce cf;
 
     // 속도 감쇠
@@ -24,14 +23,19 @@ public class Player_HCH : MonoBehaviour
     // 우클릭 시 카메라 이동 막기 위한 변수
     public bool isCamMove = true;
 
+    // 걷는 소리 딜레이
+    WaitForSeconds footstepDelay = new(0.5f);
+    bool isFootstepPlay = true;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         cf = GetComponent<ConstantForce>(); // 점프시에 켜서 중력 강하게 먹이기
-        feetCol = GetComponentInChildren<BoxCollider>(); // 나중에 점프가능 판정 수정예정
 
         currentRotation = rotateTarget.rotation.eulerAngles;
+
+        StartCoroutine(FootstepSound());
     }
 
     void FixedUpdate()
@@ -86,6 +90,19 @@ public class Player_HCH : MonoBehaviour
         }
 
         rb.velocity = newVelocity;
+
+        // 걷는 사운드
+        //if(rb.velocity.magnitude < 3f)
+        //{
+        //    StopCoroutine(FootstepSound());
+        //}
+        //if(rb.velocity.magnitude > 3f && IsGrounded() && !isPlayingFootstep)
+        //{
+        //    print(rb.velocity.magnitude);
+        //    StartCoroutine(FootstepSound());
+        //}
+
+        isFootstepPlay = rb.velocity.magnitude > 3f && IsGrounded();
     }
 
     void CharacterJump()
@@ -148,5 +165,27 @@ public class Player_HCH : MonoBehaviour
         print(collision.gameObject.name);
         isJump = false;
         cf.enabled = false;
+    }
+
+    IEnumerator FootstepSound()
+    {
+
+        //isPlayingFootstep = true;
+        //SoundManager.instance.PlaySound("Footstep_1", this.transform);
+        //yield return footstepDelay;
+        //SoundManager.instance.PlaySound("Footstep_2", this.transform);
+        //yield return footstepDelay;
+        //isPlayingFootstep = false;
+
+        while (gameObject)
+        {
+            //yield return new WaitUntil(() => rb.velocity.magnitude > 3f);
+            yield return new WaitUntil(() => isFootstepPlay);
+            SoundManager.instance.PlaySound("Footstep_1", this.transform);
+            yield return footstepDelay;
+            yield return new WaitUntil(() => isFootstepPlay);
+            SoundManager.instance.PlaySound("Footstep_2", this.transform);
+            yield return footstepDelay;
+        }
     }
 }

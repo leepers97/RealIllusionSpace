@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eadd14f48dd1b84abcb435af75ee602, type: 3}
+  m_Name: DialogDB
+  m_EditorClassIdentifier: 
+  Dialogs:
+  - id: 1
+    dialog: "\uC548\uB155\uD558\uC138\uC694 \uCCAB\uBC88\uC9F8 \uC9C0\uC5ED\uC785\uB2C8\uB2E4"
+  - id: 1
+    dialog: "\uD14C\uC2A4\uD2B8 \uBA54\uC2DC\uC9C01-1 \uC785\uB2C8\uB2E4"
+  - id: 1
+    dialog: "\uD14C\uC2A4\uD2B8 \uBA54\uC2DC\uC9C01-2 \uC785\uB2C8\uB2E4"
+  - id: 2
+    dialog: "\uD14C\uC2A4\uD2B8 \uBA54\uC2DC\uC9C02-1 \uC785\uB2C8\uB2E4"
+  - id: 2
+    dialog: "\uD14C\uC2A4\uD2B8 \uBA54\uC2DC\uC9C02-2 \uC785\uB2C8\uB2E4.."

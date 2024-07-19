@@ -69,5 +69,10 @@ public class TestManager_HCH : MonoBehaviour
             player.transform.position = TelePos[4].position;
             testLighting = false;
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            player.transform.position = TelePos[5].position;
+            testLighting = false;
+        }
     }
 }

@@ -60,6 +60,7 @@ public class CombineObject_HCH : MonoBehaviour
                 if(currentTime > checkTime)
                 {
                     // 합쳐진 게임 오브젝트를 생성하고 기존의 분리된 게임 오브젝트를 비활성화
+                    SoundManager.instance.PlaySound("Combine", Vector3.zero);
                     GameObject combinedObject = Instantiate(combinedObjectPrefab);
                     combinedObject.transform.position = combinedSpawnPos.position;
                     dividedObject.SetActive(false);

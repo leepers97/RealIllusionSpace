@@ -31,6 +31,7 @@ public class Grab3_HCH : MonoBehaviour
     private float rotationX = 0f;
     private bool isGrounded = true;
     private Collider playerCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,8 +83,11 @@ public class Grab3_HCH : MonoBehaviour
             //if (hit.collider != null && hit.collider.CompareTag("Grab"))
             if (hit.collider != null && hit.transform.gameObject.layer == 9)
             {
+                // 잡는 사운드
+                SoundManager.instance.PlaySound("GrabStart", this.transform);
                 grabbedObject = hit.collider.gameObject;
                 grabbedCollider = grabbedObject.GetComponent<Collider>();
+                print(grabbedObject.gameObject.name);
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
                 // 외곽선 표시
                 Outlinable outline = grabbedObject.GetComponent<Outlinable>();
@@ -173,6 +177,9 @@ public class Grab3_HCH : MonoBehaviour
             else
             {
                 isDropping = false;
+                // 놓는 사운드
+                SoundManager.instance.PlaySound("GrabEnd", this.transform);
+
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
                 // 나중에 리팩토링
                 if (grabbedObject.CompareTag("DivideCube"))

@@ -15,10 +15,16 @@ public class Button_HCH : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public Color originColor;
     public Color pointerColor;
 
+    AudioSource buttonAudioSource;
+    [Header("버튼 클릭 소리")]
+    public AudioClip buttonClickSound;
+
     void Start()
     {
         txt = GetComponentInChildren<Text>();
         txt.color = originColor;
+
+        buttonAudioSource = GetComponent<AudioSource>();
     }
 
     // 커서 가져다 댔을 때 하늘색으로 변경
@@ -37,6 +43,7 @@ public class Button_HCH : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     // 현재 테스트용 씬 적용중
     public void OnClickGameStart()
     {
+        buttonAudioSource.PlayOneShot(buttonClickSound);
         SceneManager.LoadScene("Main_HCH");
     }
 
@@ -44,9 +51,11 @@ public class Button_HCH : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnClickGameQuit()
     {
         #if UNITY_EDITOR
+                buttonAudioSource.PlayOneShot(buttonClickSound);
                 UnityEditor.EditorApplication.isPlaying = false;
-        #else
+#else
+                buttonAudioSource.PlayOneShot(buttonClickSound);
                 Application.Quit();
-        #endif
+#endif
     }
 }

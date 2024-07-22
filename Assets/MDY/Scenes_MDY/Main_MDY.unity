@@ -2889,6 +2889,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1083301078}
   reciever: {fileID: 1149402904}
+  ignoreTargetMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &419572707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4142,6 +4145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1460633970}
+  anotherPortal: {fileID: 1157144727}
 --- !u!65 &650467353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9145,6 +9149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1083301078}
   reciever: {fileID: 1347053391}
+  ignoreTargetMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &1149402906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9394,6 +9401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1460633970}
+  anotherPortal: {fileID: 0}
 --- !u!1001 &1254388664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10060,6 +10068,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1083301078}
   reciever: {fileID: 1149402904}
+  ignoreTargetMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &1347053393
 BoxCollider:
   m_ObjectHideFlags: 0

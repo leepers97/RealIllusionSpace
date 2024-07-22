@@ -35,6 +35,7 @@ public class Player_HCH : MonoBehaviour
 
         currentRotation = rotateTarget.rotation.eulerAngles;
 
+        isFootstepPlay = rb.velocity.magnitude > 3f && IsGrounded();
         StartCoroutine(FootstepSound());
     }
 
@@ -179,8 +180,8 @@ public class Player_HCH : MonoBehaviour
 
         while (gameObject)
         {
-            //yield return new WaitUntil(() => rb.velocity.magnitude > 3f);
             yield return new WaitUntil(() => isFootstepPlay);
+            print("11");
             SoundManager.instance.PlaySound("Footstep_1", this.transform);
             yield return footstepDelay;
             yield return new WaitUntil(() => isFootstepPlay);

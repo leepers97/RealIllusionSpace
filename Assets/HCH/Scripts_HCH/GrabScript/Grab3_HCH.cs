@@ -240,4 +240,5 @@ public class Grab3_HCH : MonoBehaviour
             Debug.DrawLine(playerCamera.transform.position, playerCamera.transform.position + direction * maxDistance, Color.red);
         }
     }
+
 }

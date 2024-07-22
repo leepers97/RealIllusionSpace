@@ -119,7 +119,7 @@ public class Player_HCH : MonoBehaviour
     {
         if (!isCamMove) return;
         currentRotation.y += Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime;
-        currentRotation.x = Mathf.Clamp(currentRotation.x - Input.GetAxis("Mouse Y") * rotateSpeed * Time.deltaTime, -70.0f, 70.0f);
+        currentRotation.x = Mathf.Clamp(currentRotation.x - Input.GetAxis("Mouse Y") * rotateSpeed * Time.deltaTime, -80.0f, 80.0f);
 
         rotateTarget.rotation = Quaternion.Euler(currentRotation);
     }

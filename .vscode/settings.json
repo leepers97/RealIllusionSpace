@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "IllusionSpace.sln"
+    "dotnet.defaultSolution": "RealIllusionSpace.sln"
 }

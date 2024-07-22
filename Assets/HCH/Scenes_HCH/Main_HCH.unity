@@ -4699,6 +4699,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ea166f10347788d4793bf48a07256628, type: 3}
   - key: Combine
     clip: {fileID: 8300000, guid: 2342416b2fbaf5648a77e455c7c21888, type: 3}
+  - key: Col_Big
+    clip: {fileID: 8300000, guid: b9ebb7acaae3fc24b8c0c140c15d46c1, type: 3}
+  - key: Col_Middle
+    clip: {fileID: 8300000, guid: 387099a158c940e42ab18497b04e3f2e, type: 3}
+  - key: Col_Small
+    clip: {fileID: 8300000, guid: dc01fc0a364a34d43b4c5eea75b93f1e, type: 3}
   poolSize: 10
   soundNodePrefab: {fileID: 3461907391392505173, guid: eb110bb0245d60c4eb03a1ff3f078b93, type: 3}
 --- !u!4 &846415941
@@ -11025,85 +11031,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603530864}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1626628936 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 536168654690580124, guid: d298ad567e120b14499d7ea86b99bdac, type: 3}
-  m_PrefabInstance: {fileID: 7725923874669982094}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1626628937
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626628936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1626628938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626628936}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  complexMaskingMode: 0
-  drawingMode: 1
-  outlineLayer: 0
-  outlineTargets:
-  - IsVisible: 1
-    CutoutMask: 8
-    edgeDilateAmount: 5
-    frontEdgeDilateAmount: 5
-    backEdgeDilateAmount: 5
-    renderer: {fileID: 1626628941}
-    SubmeshIndex: 0
-    BoundsMode: 0
-    Bounds:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
-    CutoutThreshold: 0.5
-    CullMode: 2
-    cutoutTextureName: 
-    DilateRenderingMode: 0
-    cutoutTextureIndex: 0
-  renderStyle: 1
-  outlineParameters:
-    enabled: 1
-    color: {r: 1, g: 1, b: 1, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
-  backParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
-  frontParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
---- !u!23 &1626628941 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1691470339015743988, guid: d298ad567e120b14499d7ea86b99bdac, type: 3}
-  m_PrefabInstance: {fileID: 7725923874669982094}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1627383363
 GameObject:
   m_ObjectHideFlags: 0
@@ -14962,14 +14889,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
-    - target: {fileID: 536168654690580124, guid: d298ad567e120b14499d7ea86b99bdac, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1691470339015743988, guid: d298ad567e120b14499d7ea86b99bdac, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9dacba553faf37640b9b190387e0d6a4, type: 2}
     - target: {fileID: 3355874719369205659, guid: d298ad567e120b14499d7ea86b99bdac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -15013,13 +14932,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 536168654690580124, guid: d298ad567e120b14499d7ea86b99bdac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1626628938}
-    - targetCorrespondingSourceObject: {fileID: 536168654690580124, guid: d298ad567e120b14499d7ea86b99bdac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1626628937}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d298ad567e120b14499d7ea86b99bdac, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

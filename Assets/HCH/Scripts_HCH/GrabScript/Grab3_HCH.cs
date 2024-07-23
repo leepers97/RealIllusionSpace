@@ -87,7 +87,6 @@ public class Grab3_HCH : MonoBehaviour
         ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         if (Physics.Raycast(ray, out hit))
         {
-            print(hit.transform.gameObject.name);
             // 아무것도 잡고 있지 않을 때
             if (grabbedObject == null)
             {

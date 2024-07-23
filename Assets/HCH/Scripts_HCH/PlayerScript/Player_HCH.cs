@@ -181,7 +181,6 @@ public class Player_HCH : MonoBehaviour
         while (gameObject)
         {
             yield return new WaitUntil(() => isFootstepPlay);
-            print("11");
             SoundManager.instance.PlaySound("Footstep_1", this.transform);
             yield return footstepDelay;
             yield return new WaitUntil(() => isFootstepPlay);

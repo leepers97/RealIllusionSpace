@@ -9,6 +9,8 @@ using UnityEngine;
 // 벽 머티리얼을 모두 검은 색으로 바꾸고
 // 시간 머티리얼을 모두 빨간색으로 바꾼다
 
+// 7:59가 5번 깜빡이고 8:00가 된다
+
 public class EndingColorChange_HCH : MonoBehaviour
 {
     public Material blackMat;
@@ -23,6 +25,9 @@ public class EndingColorChange_HCH : MonoBehaviour
     public Camera cam;
     string targetLayerName = "Ending";
 
+    WaitForSeconds flickerDelay = new WaitForSeconds(1f);
+    WaitForSeconds delay = new WaitForSeconds(4.25f);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,15 +40,25 @@ public class EndingColorChange_HCH : MonoBehaviour
         
     }
 
+    IEnumerator EndingFlicker(int flickerCount)
+    {
+        yield return delay;
+        for(int i = 0; i < flickerCount; i++)
+        {
+            yield return flickerDelay;
+            seven.SetActive(false);
+            yield return flickerDelay;
+            seven.SetActive(true);
+        }
+        yield return delay;
+        eight.SetActive(true);
+        seven.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //foreach(GameObject wall in walls)
-            //{
-            //    Renderer wallRend = wall.GetComponent<Renderer>();
-            //    wallRend.material = blackMat;
-            //}
             cam.clearFlags = CameraClearFlags.SolidColor;
             cam.backgroundColor = Color.black;
             cam.cullingMask = 1 << LayerMask.NameToLayer(targetLayerName);
@@ -51,6 +66,7 @@ public class EndingColorChange_HCH : MonoBehaviour
             {
                 rend.material = redMat;
             }
+            StartCoroutine(EndingFlicker(5));
         }
     }
 }

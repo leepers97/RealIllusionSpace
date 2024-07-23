@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
     WaitForSeconds textDelay = new WaitForSeconds(3f);
     public float fadeDuration = 1.5f;
 
+    public GameObject ending;
+
     void Awake()
     {
         if (instance != null)
@@ -42,6 +44,11 @@ public class UIManager : MonoBehaviour
         StartCoroutine(TextChange(id));
     }
 
+    public void EndingImage()
+    {
+        ending.SetActive(true);
+    }
+
     IEnumerator TextChange(int id)
     {
         // 배경 fade in
@@ -61,6 +68,8 @@ public class UIManager : MonoBehaviour
                 yield return StartCoroutine(TextFadeOut());
             }
         }
+        // 마지막 엔딩 텍스트가 끝날 경우 엔딩 이미지 띄우기
+        if (id == 3) EndingImage();
         // 배경 fade out
         yield return StartCoroutine(BackgroundFadeOut());
     }

@@ -8,11 +8,13 @@ public class ObjectBFader : MonoBehaviour
     private bool isVisible = true;
     private Renderer rend;
     private Material material;
+    private Collider objectCollider;
 
     private void Start()
     {
         rend = GetComponent<Renderer>();
         material = rend.material;
+        objectCollider = GetComponent<Collider>();
     }
 
     public void StartFadingOut()
@@ -43,6 +45,7 @@ public class ObjectBFader : MonoBehaviour
             yield return null;
         }
         material.SetFloat("_SlideAmount", 1);
+        objectCollider.enabled = false; // Disable the collider when fully faded out
         isFading = false;
         isVisible = false;
     }
@@ -59,6 +62,7 @@ public class ObjectBFader : MonoBehaviour
             yield return null;
         }
         material.SetFloat("_SlideAmount", 0);
+        objectCollider.enabled = true; // Enable the collider when fully faded in
         isFading = false;
         isVisible = true;
     }

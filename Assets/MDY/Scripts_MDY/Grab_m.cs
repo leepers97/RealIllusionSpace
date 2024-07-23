@@ -31,7 +31,8 @@ public class Grab_m : MonoBehaviour
     private float rotationX = 0f;
     private bool isGrounded = true;
     private Collider playerCollider;
-    // Start is called before the first frame update
+    private List<Collider> ignoredColliders = new List<Collider>();
+
     void Start()
     {
         playerCollider = GetComponent<Collider>();
@@ -45,7 +46,6 @@ public class Grab_m : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -79,20 +79,18 @@ public class Grab_m : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            //if (hit.collider != null && hit.collider.CompareTag("Grab"))
             if (hit.collider != null && hit.transform.gameObject.layer == 9)
             {
                 grabbedObject = hit.collider.gameObject;
                 grabbedCollider = grabbedObject.GetComponent<Collider>();
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-                // �ܰ��� ǥ��
                 Outlinable outline = grabbedObject.GetComponent<Outlinable>();
                 outline.enabled = true;
 
                 isGrabbing = true;
                 grabbedObject.transform.SetParent(GameManager.instance.player.transform);
 
-                Physics.IgnoreCollision(grabbedCollider, playerCollider, true);
+                IgnorePlayerCollisions(grabbedCollider, true);
 
                 initialDistance = Vector3.Distance(playerCamera.transform.position, grabbedObject.GetComponent<Renderer>().bounds.center);
                 initialScale = grabbedObject.transform.localScale;
@@ -110,26 +108,20 @@ public class Grab_m : MonoBehaviour
             Vector3 objectCenter = grabbedObject.GetComponent<Renderer>().bounds.center;
             dropDirection = (objectCenter - playerCamera.transform.position).normalized;
 
-            Physics.IgnoreCollision(grabbedCollider, playerCollider, false);
+            IgnorePlayerCollisions(grabbedCollider, false);
 
-            // Check camera rotation before cloning the object
-            //float cameraRotationX = playerCamera.transform.localRotation.eulerAngles.x;
             float cameraRotationX = GameManager.instance.player.transform.localRotation.eulerAngles.x;
-            // Clone the object only if camera is looking downwards (rotationX >= 90)
             if (cameraRotationX >= 0f)
             {
-                // Clone the object and keep it in front of the camera
                 clonedObject = Instantiate(grabbedObject, grabbedObject.transform.position, grabbedObject.transform.rotation);
                 clonedObject.transform.localScale = grabbedObject.transform.localScale;
                 clonedObject.GetComponent<Rigidbody>().isKinematic = true;
 
-                // Disable the collider of the cloned object to prevent collisions
                 Collider clonedCollider = clonedObject.GetComponent<Collider>();
                 if (clonedCollider != null)
                 {
                     clonedCollider.enabled = false;
                 }
-                //StartCoroutine(DestroyCloneAfterDelay(0.25f)); // Set delay to 0.1 seconds
             }
         }
     }
@@ -138,7 +130,6 @@ public class Grab_m : MonoBehaviour
     {
         if (grabbedObject != null)
         {
-            // �ܰ��� ����
             Outlinable outline = grabbedObject.GetComponent<Outlinable>();
             outline.enabled = false;
 
@@ -174,13 +165,36 @@ public class Grab_m : MonoBehaviour
             {
                 isDropping = false;
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-                // ���߿� �����丵
                 if (grabbedObject.CompareTag("DivideCube"))
                 {
                     grabbedObject.GetComponent<DividedCube_HCH>().DivideCube();
                 }
                 grabbedObject = null;
                 Destroy(clonedObject);
+            }
+        }
+    }
+
+    void IgnorePlayerCollisions(Collider objectCollider, bool ignore)
+    {
+        Collider[] playerColliders = playerCollider.GetComponentsInChildren<Collider>();
+        foreach (Collider playerCol in playerColliders)
+        {
+            if (ignore)
+            {
+                if (!ignoredColliders.Contains(playerCol))
+                {
+                    Physics.IgnoreCollision(objectCollider, playerCol, true);
+                    ignoredColliders.Add(playerCol);
+                }
+            }
+            else
+            {
+                if (ignoredColliders.Contains(playerCol))
+                {
+                    Physics.IgnoreCollision(objectCollider, playerCol, false);
+                    ignoredColliders.Remove(playerCol);
+                }
             }
         }
     }
@@ -197,11 +211,6 @@ public class Grab_m : MonoBehaviour
         }
         return true;
     }
-
-    //bool IsGrounded()
-    //{
-    //    return Physics.Raycast(transform.position, Vector3.down, GetComponent<Collider>().bounds.extents.y + 0.1f);
-    //}
 
     void DropObject()
     {

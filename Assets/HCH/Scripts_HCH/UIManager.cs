@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // 전체적인 대화창을 관리
 
@@ -49,6 +50,11 @@ public class UIManager : MonoBehaviour
         ending.SetActive(true);
     }
 
+    public void BackToStartMenu()
+    {
+        SceneManager.LoadScene("StartScene_HCH");
+    }
+
     IEnumerator TextChange(int id)
     {
         // 배경 fade in
@@ -69,7 +75,12 @@ public class UIManager : MonoBehaviour
             }
         }
         // 마지막 엔딩 텍스트가 끝날 경우 엔딩 이미지 띄우기
-        if (id == 3) EndingImage();
+        if (id == 3)
+        {
+            EndingImage();
+            yield return textDelay;
+            BackToStartMenu();
+        }
         // 배경 fade out
         yield return StartCoroutine(BackgroundFadeOut());
     }

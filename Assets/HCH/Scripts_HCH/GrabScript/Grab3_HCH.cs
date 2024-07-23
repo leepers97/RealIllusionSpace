@@ -32,6 +32,12 @@ public class Grab3_HCH : MonoBehaviour
     private bool isGrounded = true;
     private Collider playerCollider;
 
+    Ray ray;
+    RaycastHit hit;
+    public Image aimImage;
+    public Image canGrabImage;
+    public Image grabbedImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +45,7 @@ public class Grab3_HCH : MonoBehaviour
 
         //Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
+        aimImage.enabled = true;
 
         if (crosshairImage != null)
         {
@@ -49,6 +56,8 @@ public class Grab3_HCH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ChangeAimImage();
+
         if (Input.GetMouseButtonDown(0))
         {
             if (isGrabbing)
@@ -73,10 +82,48 @@ public class Grab3_HCH : MonoBehaviour
         }
     }
 
+    void ChangeAimImage()
+    {
+        ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        if (Physics.Raycast(ray, out hit))
+        {
+            print(hit.transform.gameObject.name);
+            // 아무것도 잡고 있지 않을 때
+            if (grabbedObject == null)
+            {
+                // targetable 레이어의 물체가 ray에 맞으면
+                if (hit.transform.gameObject.layer == 9 || hit.transform.gameObject.CompareTag("Clone"))
+                {
+                    // canGrabImage를 띄운다
+                    aimImage.enabled = false;
+                    grabbedImage.enabled = false;
+                    canGrabImage.enabled = true;
+                }
+                // targetable 레이어가 아닌 물체가 ray에 맞으면
+                else
+                {
+                    // aimImagefmf 띄운다
+                    grabbedImage.enabled = false;
+                    canGrabImage.enabled = false;
+                    aimImage.enabled = true;
+                }
+            }
+            // 물체를 잡고 있을 때
+            else
+            {
+                // grabbedImage를 띄운다
+                aimImage.enabled = false;
+                canGrabImage.enabled = false;
+                grabbedImage.enabled = true;
+
+            }
+        }
+    }
+
     void TryGrabObject()
     {
-        Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        RaycastHit hit;
+        //Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        //RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
         {

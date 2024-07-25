@@ -27,7 +27,6 @@ public class Dissolve_HCH : MonoBehaviour
         }
         if (isDissolve)
         {
-            print(value);
             if(value > 1)
             {
                 value = 0;

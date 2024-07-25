@@ -62,11 +62,11 @@ public class Player_HCH : MonoBehaviour
 
         if (IsGrounded())
         {
-            print("∂•ø° ¥Í¿Ω");
+            //print("∂•ø° ¥Í¿Ω");
         }
         else
         {
-            print("∞¯¡ﬂ¿”");
+            //print("∞¯¡ﬂ¿”");
             cf.enabled = true;
         }
     }

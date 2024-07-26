@@ -51,16 +51,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Dissolve: 0.00015142799
+    - _Dissolve: 1.0071388
     - _EdgeColorIntensity: 1
     - _EdgeWidth: 0
-    - _Metallic: 0.337
+    - _Metallic: 0
     - _NoiseScale: 50
     - _NormalScale: 1
     - _OcclusionStrength: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.932
+    - _Smoothness: 0.123
     m_Colors:
     - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
     - _EdgeColor: {r: 5.3403134, g: 5.3403134, b: 5.3403134, a: 0}

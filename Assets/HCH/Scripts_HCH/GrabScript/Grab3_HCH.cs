@@ -140,7 +140,8 @@ public class Grab3_HCH : MonoBehaviour
                 outline.enabled = true;
 
                 isGrabbing = true;
-                grabbedObject.transform.SetParent(GameManager.instance.player.transform);
+                //grabbedObject.transform.SetParent(GameManager.instance.player.transform);
+                grabbedObject.transform.SetParent(playerCamera.transform);
 
                 Physics.IgnoreCollision(grabbedCollider, playerCollider, true);
 

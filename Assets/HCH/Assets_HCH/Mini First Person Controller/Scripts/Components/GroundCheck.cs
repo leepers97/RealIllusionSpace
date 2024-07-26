@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+癤퓎sing UnityEngine;
 
-// 충돌 감지해서 player스크립트에 전달
-
-public class PlayerGroundCheck_HCH : MonoBehaviour
+[ExecuteInEditMode]
+public class GroundCheck : MonoBehaviour
 {
     [Tooltip("Maximum distance from the ground.")]
     public float distanceThreshold = .15f;

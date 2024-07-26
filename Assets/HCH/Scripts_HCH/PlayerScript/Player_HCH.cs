@@ -158,7 +158,7 @@ public class Player_HCH : MonoBehaviour
         //print("점프가능");
         //print(collision.GetContact(0).point);
         isJump = false;
-        cf.enabled = false;
+        //cf.enabled = false;
     }
 
     public void FeetCollisionEnter(Collision collision)

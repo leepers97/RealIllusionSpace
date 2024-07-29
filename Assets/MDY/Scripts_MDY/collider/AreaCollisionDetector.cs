@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AreaCollisionDetector : MonoBehaviour
+public class CollisionAreaRigidbodyAdder : MonoBehaviour
 {
-    public float requiredCollisionArea = 1.0f; // 임계값을 설정합니다.
-    private float totalCollisionArea = 0.0f;
-    private bool isRigidbodyAdded = false;
+    public float requiredCollisionArea = 1.0f; // 필요한 총 충돌 면적
+    private float totalCollisionArea = 0f; // 누적된 총 충돌 면적
+    private bool isRigidbodyAdded = false; // Rigidbody가 추가되었는지 여부
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -52,10 +50,16 @@ public class AreaCollisionDetector : MonoBehaviour
 
     private float CalculateCollisionArea(Collision collision)
     {
-        // 충돌 면적을 계산합니다.
-        // 간단한 예로 충돌 지점의 개수를 사용하지만,
-        // 실제 면적 계산을 원하면 더욱 정교한 계산을 해야 합니다.
-        return collision.contacts.Length * 0.1f; // 충돌 지점의 개수를 기반으로 면적을 추정합니다.
+        float area = 0f;
+
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            // 충돌 지점에서 면적을 계산합니다. 간단히 원형 면적으로 가정합니다.
+            float radius = 0.1f; // 임의의 반지름 값 (조절 가능)
+            area += Mathf.PI * Mathf.Pow(radius, 2);
+        }
+
+        return area;
     }
 
     private void AddRigidbody()

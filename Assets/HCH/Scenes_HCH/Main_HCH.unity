@@ -72943,10 +72943,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b36c75b1f40d9b489ae9a12d9a1ea83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalCam_A: {fileID: 1131776003}
-  portalCam_B: {fileID: 1670222532}
-  portalCamMat_A: {fileID: 2100000, guid: 0d439d861db0bfb46b17f02a893ee12e, type: 2}
-  portalCamMat_B: {fileID: 2100000, guid: 2bc088114347fb04db134d7132b40f5c, type: 2}
+  portalCam_A:
+  - {fileID: 1131776003}
+  portalCam_B:
+  - {fileID: 1670222532}
+  portalCamMat_A:
+  - {fileID: 2100000, guid: 0d439d861db0bfb46b17f02a893ee12e, type: 2}
+  portalCamMat_B:
+  - {fileID: 2100000, guid: 2bc088114347fb04db134d7132b40f5c, type: 2}
 --- !u!4 &1927015825
 Transform:
   m_ObjectHideFlags: 0
@@ -73011,10 +73015,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b36c75b1f40d9b489ae9a12d9a1ea83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalCam_A: {fileID: 1278013206}
-  portalCam_B: {fileID: 1842352656}
-  portalCamMat_A: {fileID: 2100000, guid: 0d439d861db0bfb46b17f02a893ee12e, type: 2}
-  portalCamMat_B: {fileID: 2100000, guid: 2bc088114347fb04db134d7132b40f5c, type: 2}
+  portalCam_A:
+  - {fileID: 0}
+  portalCam_B:
+  - {fileID: 0}
+  portalCamMat_A:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  portalCamMat_B:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &1928730678
 PrefabInstance:
   m_ObjectHideFlags: 0

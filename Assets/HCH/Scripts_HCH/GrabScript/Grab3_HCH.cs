@@ -22,6 +22,7 @@ public class Grab3_HCH : MonoBehaviour
 
     private GameObject clonedObject;
     private bool isGrabbing = false;
+    [SerializeField]
     private bool isDropping = false;
     private Vector3 initialScale;
     private float initialDistance;
@@ -143,7 +144,8 @@ public class Grab3_HCH : MonoBehaviour
                 //grabbedObject.transform.SetParent(GameManager.instance.player.transform);
                 grabbedObject.transform.SetParent(playerCamera.transform);
 
-                Physics.IgnoreCollision(grabbedCollider, playerCollider, true);
+                //Physics.IgnoreCollision(grabbedCollider, playerCollider, true);
+                IgnoreCollisionsWithPlayer(grabbedObject, true); // 충돌 무시 설정
 
                 initialDistance = Vector3.Distance(playerCamera.transform.position, grabbedObject.GetComponent<Renderer>().bounds.center);
                 initialScale = grabbedObject.transform.localScale;
@@ -161,7 +163,9 @@ public class Grab3_HCH : MonoBehaviour
             Vector3 objectCenter = grabbedObject.GetComponent<Renderer>().bounds.center;
             dropDirection = (objectCenter - playerCamera.transform.position).normalized;
 
-            Physics.IgnoreCollision(grabbedCollider, playerCollider, false);
+            //Physics.IgnoreCollision(grabbedCollider, playerCollider, false);
+            IgnoreCollisionsWithPlayer(grabbedObject, false); // 충돌 무시 해제
+
 
             // Check camera rotation before cloning the object
             //float cameraRotationX = playerCamera.transform.localRotation.eulerAngles.x;
@@ -288,4 +292,17 @@ public class Grab3_HCH : MonoBehaviour
         }
     }
 
+    void IgnoreCollisionsWithPlayer(GameObject objectToIgnore, bool ignore)
+    {
+        Collider[] playerColliders = playerCollider.GetComponentsInChildren<Collider>();
+        Collider[] objectColliders = objectToIgnore.GetComponentsInChildren<Collider>();
+
+        foreach (Collider playerCol in playerColliders)
+        {
+            foreach (Collider objCol in objectColliders)
+            {
+                Physics.IgnoreCollision(playerCol, objCol, ignore);
+            }
+        }
+    }
 }

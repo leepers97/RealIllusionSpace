@@ -90,7 +90,7 @@ public class Grab_m : MonoBehaviour
                 isGrabbing = true;
                 grabbedObject.transform.SetParent(GameManager.instance.player.transform);
 
-                IgnorePlayerCollisions(grabbedCollider, true);
+                IgnoreCollisionsWithPlayer(grabbedObject, true); // 충돌 무시 설정
 
                 initialDistance = Vector3.Distance(playerCamera.transform.position, grabbedObject.GetComponent<Renderer>().bounds.center);
                 initialScale = grabbedObject.transform.localScale;
@@ -108,7 +108,7 @@ public class Grab_m : MonoBehaviour
             Vector3 objectCenter = grabbedObject.GetComponent<Renderer>().bounds.center;
             dropDirection = (objectCenter - playerCamera.transform.position).normalized;
 
-            IgnorePlayerCollisions(grabbedCollider, false);
+            IgnoreCollisionsWithPlayer(grabbedObject, false); // 충돌 무시 해제
 
             float cameraRotationX = GameManager.instance.player.transform.localRotation.eulerAngles.x;
             if (cameraRotationX >= 0f)
@@ -175,26 +175,16 @@ public class Grab_m : MonoBehaviour
         }
     }
 
-    void IgnorePlayerCollisions(Collider objectCollider, bool ignore)
+    void IgnoreCollisionsWithPlayer(GameObject objectToIgnore, bool ignore)
     {
         Collider[] playerColliders = playerCollider.GetComponentsInChildren<Collider>();
+        Collider[] objectColliders = objectToIgnore.GetComponentsInChildren<Collider>();
+
         foreach (Collider playerCol in playerColliders)
         {
-            if (ignore)
+            foreach (Collider objCol in objectColliders)
             {
-                if (!ignoredColliders.Contains(playerCol))
-                {
-                    Physics.IgnoreCollision(objectCollider, playerCol, true);
-                    ignoredColliders.Add(playerCol);
-                }
-            }
-            else
-            {
-                if (ignoredColliders.Contains(playerCol))
-                {
-                    Physics.IgnoreCollision(objectCollider, playerCol, false);
-                    ignoredColliders.Remove(playerCol);
-                }
+                Physics.IgnoreCollision(playerCol, objCol, ignore);
             }
         }
     }
@@ -217,6 +207,7 @@ public class Grab_m : MonoBehaviour
         if (grabbedObject != null)
         {
             grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+            IgnoreCollisionsWithPlayer(grabbedObject, false); // 충돌 무시 해제
             grabbedObject = null;
             isGrabbing = false;
         }

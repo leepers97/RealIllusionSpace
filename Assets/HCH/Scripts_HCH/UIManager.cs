@@ -19,7 +19,10 @@ public class UIManager : MonoBehaviour
     public Image txtBG;
     Text txt;
 
-    WaitForSeconds textDelay = new WaitForSeconds(3f);
+    public float m_TextDelay = 3f;
+
+    WaitForSeconds textDelay = new WaitForSeconds(2.05f);
+
     public float fadeDuration = 1.5f;
 
     public GameObject ending;

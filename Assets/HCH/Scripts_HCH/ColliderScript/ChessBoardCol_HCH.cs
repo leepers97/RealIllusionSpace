@@ -8,33 +8,31 @@ using UnityEngine;
 public class ChessBoardCol_HCH : MonoBehaviour
 {
     [SerializeField]
-    bool isTouchable = false;
+    bool _IsTouchable = false;
 
-    BoxCollider col;
-    CapsuleCollider playerCol;
+    Collider col;
+    Collider[] playerCols;
     // Start is called before the first frame update
     void Start()
     {
-        col = GetComponent<BoxCollider>();
-        playerCol = GameManager.instance.player.gameObject.GetComponent<CapsuleCollider>();
-        Physics.IgnoreCollision(playerCol, col, true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        col = GetComponent<Collider>();
+        playerCols = GameManager.instance.player.GetComponentsInChildren<Collider>();
+        foreach(Collider playerCol in playerCols)
+        {
+            Physics.IgnoreCollision(playerCol, col, true);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.gameObject.name);
         // targetable 오브젝트와 충돌 시
-        if(collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 9)
         {
             // 다른 오브젝트도 충돌 가능하게 하고
-            //isTouchable = true;
-            Physics.IgnoreCollision(playerCol, col, false);
+            foreach (Collider playerCol in playerCols)
+            {
+                Physics.IgnoreCollision(playerCol, col, false);
+            }
         }
     }
 
@@ -43,8 +41,11 @@ public class ChessBoardCol_HCH : MonoBehaviour
         // targetable 오브젝트와 충돌 해제 시
         if (collision.gameObject.layer == 9)
         {
-            //isTouchable = false;
-            Physics.IgnoreCollision(playerCol, col, true);
+            foreach (Collider playerCol in playerCols)
+            {
+                Physics.IgnoreCollision(playerCol, col, true);
+            }
+
         }
     }
 }

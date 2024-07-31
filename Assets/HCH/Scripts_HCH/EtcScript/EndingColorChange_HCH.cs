@@ -34,12 +34,6 @@ public class EndingColorChange_HCH : MonoBehaviour
         sevenRends = seven.GetComponentsInChildren<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator EndingFlicker(int flickerCount)
     {
         yield return delay;

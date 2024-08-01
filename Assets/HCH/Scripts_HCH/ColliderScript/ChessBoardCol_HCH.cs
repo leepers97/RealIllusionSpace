@@ -9,6 +9,7 @@ public class ChessBoardCol_HCH : MonoBehaviour
 {
     [SerializeField]
     bool _IsTouchable = false;
+    public int targetableObjCount = 0;
 
     Collider col;
     Collider[] playerCols;
@@ -20,18 +21,21 @@ public class ChessBoardCol_HCH : MonoBehaviour
         foreach(Collider playerCol in playerCols)
         {
             Physics.IgnoreCollision(playerCol, col, true);
+            _IsTouchable = false;
         }
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         // targetable 오브젝트와 충돌 시
         if (collision.gameObject.layer == 9)
         {
+            targetableObjCount++;
             // 다른 오브젝트도 충돌 가능하게 하고
             foreach (Collider playerCol in playerCols)
             {
                 Physics.IgnoreCollision(playerCol, col, false);
+                _IsTouchable = true;
             }
         }
     }
@@ -41,11 +45,25 @@ public class ChessBoardCol_HCH : MonoBehaviour
         // targetable 오브젝트와 충돌 해제 시
         if (collision.gameObject.layer == 9)
         {
-            foreach (Collider playerCol in playerCols)
+            targetableObjCount--;
+            // 오브젝트가 이미 있다면 충돌 가능
+            if (targetableObjCount <= 0)
             {
-                Physics.IgnoreCollision(playerCol, col, true);
+                foreach (Collider playerCol in playerCols)
+                {
+                    Physics.IgnoreCollision(playerCol, col, true);
+                    _IsTouchable = false;
+                }
             }
+        }
+    }
 
+    public void ResetCol()
+    {
+        foreach (Collider playerCol in playerCols)
+        {
+            Physics.IgnoreCollision(playerCol, col, true);
+            _IsTouchable = false;
         }
     }
 }

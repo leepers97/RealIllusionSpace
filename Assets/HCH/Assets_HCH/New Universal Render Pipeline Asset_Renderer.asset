@@ -1,5 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8921461700711658677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a529de71a3723409dc5bcc5e30cf8c, type: 3}
+  m_Name: '[SCPE] ScanlinesRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-8303481186656358158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8fd88d0295034688a2f7fa7b77870, type: 3}
+  m_Name: '[SCPE] BlackBarsRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 3
 --- !u!114 &-8201663886608232339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,6 +69,74 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 3302065f671a8450b82c9ddf07426f3a, type: 3}
   - {fileID: 2800000, guid: 56a77a3e8d64f47b6afe9e3c95cb57d5, type: 3}
   m_Shader: {fileID: 4800000, guid: 0849e84e3d62649e8882e9d6f056a017, type: 3}
+--- !u!114 &-7724312520919605950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b2f25099ada99479afd1cac5f07b6f, type: 3}
+  m_Name: '[SCPE] SunshaftsRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-7373792357223990369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bdb6dd14f6f00478b0543e3f8446e7, type: 3}
+  m_Name: '[SCPE] ColorizeRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-6960468054692737690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6ccf04602df664fa8dcf324b69b67d, type: 3}
+  m_Name: '[SCPE] LightStreaksRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-6794525189949762001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd7de23ae8245d4bb4b286ac8e88842, type: 3}
+  m_Name: '[SCPE] RadialBlurRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
 --- !u!114 &-6544131567970521471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,6 +150,144 @@ MonoBehaviour:
   m_Name: URPOutlineFeature
   m_EditorClassIdentifier: 
   m_Active: 1
+--- !u!114 &-5696437204710305051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de805ffa8db69e8499306de22402dca3, type: 3}
+  m_Name: '[SCPE] AmbientOcclusion2DRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-4381544954214401401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb19e41484313f243add772a3db1bd04, type: 3}
+  m_Name: '[SCPE] RefractionRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-4335067813269402499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b05fc1dfd54667b40ffd24df20506c, type: 3}
+  m_Name: '[SCPE] CausticsRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+    skipTransparents: 0
+--- !u!114 &-3858235914893417438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b1aa0fcc082a04480388013aa6535c, type: 3}
+  m_Name: '[SCPE] BlurRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 3
+--- !u!114 &-3647580544199555849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e145efbf4714542a66f8e60a4ebfc3, type: 3}
+  m_Name: '[SCPE] DangerRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-2593211789456695933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3aa9cc45b3c6d41931da538b5008f9, type: 3}
+  m_Name: '[SCPE] MosaicRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-2074545438049299320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee8851bdeb459741ada1bac26e556aa, type: 3}
+  m_Name: '[SCPE] DoubleVisionRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 3
+--- !u!114 &-376374548442605373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0901745d61172c94ca041c037ed39361, type: 3}
+  m_Name: '[SCPE] HueShift3DRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+    reconstructDepthNormals: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +306,31 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -6544131567970521471}
   - {fileID: -8201663886608232339}
+  - {fileID: -3858235914893417438}
+  - {fileID: 85084539796935526}
+  - {fileID: -6960468054692737690}
+  - {fileID: 4964714118059495328}
+  - {fileID: -3647580544199555849}
+  - {fileID: -8303481186656358158}
+  - {fileID: 810404510689248233}
+  - {fileID: -5696437204710305051}
+  - {fileID: -4381544954214401401}
+  - {fileID: 1293110230672197291}
+  - {fileID: 194060919980046779}
+  - {fileID: -6794525189949762001}
+  - {fileID: -2593211789456695933}
+  - {fileID: 2308107521044536521}
+  - {fileID: 7470527609619511928}
+  - {fileID: 3301121301245374246}
+  - {fileID: -2074545438049299320}
+  - {fileID: 8868869617746295288}
+  - {fileID: 4821248543273935944}
+  - {fileID: 5708774592571023069}
+  - {fileID: -8921461700711658677}
+  - {fileID: -376374548442605373}
+  - {fileID: -7373792357223990369}
+  - {fileID: -7724312520919605950}
+  - {fileID: -4335067813269402499}
   m_RendererFeatureMap: 816eb2df02932ea56d10913f26d62d8e
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -105,3 +370,193 @@ MonoBehaviour:
   m_CopyDepthMode: 1
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &85084539796935526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039ea2c8d80d11f4aa1926e992d660b4, type: 3}
+  m_Name: '[SCPE] ColorSplitRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &194060919980046779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58c0e0fb1b4c7549b2b50948300b0e5, type: 3}
+  m_Name: '[SCPE] FogRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+    skipTransparents: 1
+--- !u!114 &810404510689248233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da344ce563de5ee4a9266dc0a74eabd0, type: 3}
+  m_Name: '[SCPE] SketchRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &1293110230672197291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75abc38b4cd3a4d4982e12c466596dad, type: 3}
+  m_Name: '[SCPE] TransitionRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &2308107521044536521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb63c1c7a70fdec43bce754fd048e801, type: 3}
+  m_Name: '[SCPE] EdgeDetectionRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+    reconstructDepthNormals: 1
+    skipTransparents: 0
+--- !u!114 &3301121301245374246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49ceeae970dfce4e9e021870908492b, type: 3}
+  m_Name: '[SCPE] TubeDistortionRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 3
+--- !u!114 &4821248543273935944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88484802267f2548ad84d0108298b39, type: 3}
+  m_Name: '[SCPE] KaleidoscopeRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 3
+--- !u!114 &4964714118059495328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb509713f3bc55438a47e05ae9adb8c, type: 3}
+  m_Name: '[SCPE] TiltShiftRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &5708774592571023069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058d8bb16aaa48740a270439645f313d, type: 3}
+  m_Name: '[SCPE] GradientRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &7470527609619511928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400dc2baa0a22054cb259512e4ce8907, type: 3}
+  m_Name: '[SCPE] KuwaharaRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &8868869617746295288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869ab7a34d3a40447b807792de94f3f0, type: 3}
+  m_Name: '[SCPE] LensFlaresRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5

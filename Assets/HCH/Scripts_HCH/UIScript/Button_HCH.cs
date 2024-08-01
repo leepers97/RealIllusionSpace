@@ -44,7 +44,7 @@ public class Button_HCH : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnClickGameStart()
     {
         buttonAudioSource.PlayOneShot(buttonClickSound);
-        SceneManager.LoadScene("Main_HCH");
+        SceneManager.LoadScene("Map_HCH");
     }
 
     // 게임 종료 버튼

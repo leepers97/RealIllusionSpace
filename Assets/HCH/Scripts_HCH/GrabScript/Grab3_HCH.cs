@@ -88,30 +88,30 @@ public class Grab3_HCH : MonoBehaviour
         ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         if (Physics.Raycast(ray, out hit))
         {
-            // ¾Æ¹«°Íµµ Àâ°í ÀÖÁö ¾ÊÀ» ¶§
+            // ï¿½Æ¹ï¿½ï¿½Íµï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
             if (grabbedObject == null)
             {
-                // targetable ·¹ÀÌ¾îÀÇ ¹°Ã¼°¡ ray¿¡ ¸ÂÀ¸¸é
+                // targetable ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ rayï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 if (hit.transform.gameObject.layer == 9 || hit.transform.gameObject.CompareTag("Clone"))
                 {
-                    // canGrabImage¸¦ ¶ç¿î´Ù
+                    // canGrabImageï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                     aimImage.enabled = false;
                     grabbedImage.enabled = false;
                     canGrabImage.enabled = true;
                 }
-                // targetable ·¹ÀÌ¾î°¡ ¾Æ´Ñ ¹°Ã¼°¡ ray¿¡ ¸ÂÀ¸¸é
+                // targetable ï¿½ï¿½ï¿½Ì¾î°¡ ï¿½Æ´ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ rayï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 else
                 {
-                    // aimImagefmf ¶ç¿î´Ù
+                    // aimImagefmf ï¿½ï¿½ï¿½ï¿½
                     grabbedImage.enabled = false;
                     canGrabImage.enabled = false;
                     aimImage.enabled = true;
                 }
             }
-            // ¹°Ã¼¸¦ Àâ°í ÀÖÀ» ¶§
+            // ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
             else
             {
-                // grabbedImage¸¦ ¶ç¿î´Ù
+                // grabbedImageï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 aimImage.enabled = false;
                 canGrabImage.enabled = false;
                 grabbedImage.enabled = true;
@@ -130,13 +130,13 @@ public class Grab3_HCH : MonoBehaviour
             //if (hit.collider != null && hit.collider.CompareTag("Grab"))
             if (hit.collider != null && hit.transform.gameObject.layer == 9)
             {
-                // Àâ´Â »ç¿îµå
-                SoundManager.instance.PlaySound("GrabStart", this.transform);
+                // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                //SoundManager.instance.PlaySound("GrabStart", this.transform);
                 grabbedObject = hit.collider.gameObject;
                 grabbedCollider = grabbedObject.GetComponent<Collider>();
                 print(grabbedObject.gameObject.name);
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-                // ¿Ü°û¼± Ç¥½Ã
+                // ï¿½Ü°ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
                 Outlinable outline = grabbedObject.GetComponent<Outlinable>();
                 outline.enabled = true;
 
@@ -193,7 +193,7 @@ public class Grab3_HCH : MonoBehaviour
     {
         if (grabbedObject != null)
         {
-            // ¿Ü°û¼± ÇØÁ¦
+            // ï¿½Ü°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             Outlinable outline = grabbedObject.GetComponent<Outlinable>();
             outline.enabled = false;
 
@@ -228,11 +228,11 @@ public class Grab3_HCH : MonoBehaviour
             else
             {
                 isDropping = false;
-                // ³õ´Â »ç¿îµå
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 SoundManager.instance.PlaySound("GrabEnd", this.transform);
 
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-                // ³ªÁß¿¡ ¸®ÆÑÅä¸µ
+                // ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ä¸µ
                 if (grabbedObject.CompareTag("DivideCube"))
                 {
                     grabbedObject.GetComponent<DividedCube_HCH>().DivideCube();

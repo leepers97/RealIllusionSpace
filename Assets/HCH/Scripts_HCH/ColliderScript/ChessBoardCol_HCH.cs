@@ -23,7 +23,7 @@ public class ChessBoardCol_HCH : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         // targetable 오브젝트와 충돌 시
         if (collision.gameObject.layer == 9)

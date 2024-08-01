@@ -10,10 +10,8 @@ public class Teleport_HCH : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("11");
         if (other.CompareTag("Player"))
         {
-            print("22");
             other.transform.position = spawnPoint.position;
         }
     }

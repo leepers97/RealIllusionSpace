@@ -10363,6 +10363,7 @@ MonoBehaviour:
   dissolveSpeed: 0.03
   cam: {fileID: 0}
   nextMap: {fileID: 0}
+  fogVolume: {fileID: 0}
 --- !u!1001 &266993761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27294,6 +27295,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726945064}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &729394001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 729394003}
+  - component: {fileID: 729394002}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &729394002
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729394001}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.950338, z: 6.3818083}
+  m_Center: {x: 0, y: 0.97516894, z: -2.6909041}
+--- !u!4 &729394003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729394001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.04, y: 1.5, z: -11.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730513163
 GameObject:
   m_ObjectHideFlags: 0
@@ -40564,6 +40618,7 @@ MonoBehaviour:
   groundCheckDistance: 0.1
   playerCamera: {fileID: 963194227}
   grabbedObject: {fileID: 0}
+  isDropping: 0
   aimImage: {fileID: 441623534}
   canGrabImage: {fileID: 423665260}
   grabbedImage: {fileID: 1101202885}
@@ -63262,6 +63317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogdb: {fileID: 11400000, guid: b1a35a49ccd5f6844a0db61308d9a874, type: 2}
   txtBG: {fileID: 478584126}
+  m_TextDelay: 3
   fadeDuration: 0.5
   ending: {fileID: 410275864}
 --- !u!4 &1685606849
@@ -82152,3 +82208,4 @@ SceneRoots:
   - {fileID: 9978727}
   - {fileID: 45858958}
   - {fileID: 1418390330}
+  - {fileID: 729394003}

@@ -28,10 +28,10 @@ public class ObjectReset_HCH : MonoBehaviour
             {
                 obj[i].transform.localPosition = originalPos[i].localPosition;
             }
-            for (int i = 0; i < chessBoard.Length; i++)
-            {
-                chessBoard[i].ResetCol();
-            }
+            //for (int i = 0; i < chessBoard.Length; i++)
+            //{
+            //    chessBoard[i].ResetCol();
+            //}
         }        
     }
 }

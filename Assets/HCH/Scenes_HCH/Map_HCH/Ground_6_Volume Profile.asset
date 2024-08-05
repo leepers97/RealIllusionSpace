@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Value: 500
   amount:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.02
   iterations:
     m_OverrideState: 0
     m_Value: 6

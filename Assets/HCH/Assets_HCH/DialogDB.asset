@@ -52,3 +52,6 @@ MonoBehaviour:
     dialog: "\uB208\uC744"
   - id: 3
     dialog: "\uB728\uC138\uC694"
+  - id: 4
+    dialog: "\uC5D0\uB7EC \uBC1C\uC0DD : \uD3ED\uBC1C\uC131 \uAFC8 \uACFC\uBD80\uD654\uAC00
+      \uAC78\uB9B4 \uC218 \uC788\uC2B5\uB2C8\uB2E4."

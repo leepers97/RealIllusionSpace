@@ -88,7 +88,7 @@ public class Grab3_HCH : MonoBehaviour
         ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         if (Physics.Raycast(ray, out hit))
         {
-            // �ƹ��͵� ��� ���� ���� ��
+            // �ƹ��͵� ���?���� ���� ��
             if (grabbedObject == null)
             {
                 // targetable ���̾��� ��ü�� ray�� ������
@@ -108,7 +108,7 @@ public class Grab3_HCH : MonoBehaviour
                     aimImage.enabled = true;
                 }
             }
-            // ��ü�� ��� ���� ��
+            // ��ü�� ���?���� ��
             else
             {
                 // grabbedImage�� ����
@@ -130,8 +130,8 @@ public class Grab3_HCH : MonoBehaviour
             //if (hit.collider != null && hit.collider.CompareTag("Grab"))
             if (hit.collider != null && hit.transform.gameObject.layer == 9)
             {
-                // ��� ����
-                //SoundManager.instance.PlaySound("GrabStart", this.transform);
+                // ���?����
+                SoundManager.instance.PlaySound("GrabStart", this.transform);
                 grabbedObject = hit.collider.gameObject;
                 grabbedCollider = grabbedObject.GetComponent<Collider>();
                 print(grabbedObject.gameObject.name);

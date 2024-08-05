@@ -29,12 +29,6 @@ public class Dissolve_HCH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            isDissolve = true;
-            cam.clearFlags = CameraClearFlags.SolidColor;
-            cam.backgroundColor = Color.white;
-        }
         if (isDissolve)
         {
             if(value > 1)
@@ -52,5 +46,15 @@ public class Dissolve_HCH : MonoBehaviour
     public void Dissolve()
     {
         dissolveMat.SetFloat("_Dissolve", value);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isDissolve = true;
+            cam.clearFlags = CameraClearFlags.SolidColor;
+            cam.backgroundColor = Color.white;
+        }
     }
 }

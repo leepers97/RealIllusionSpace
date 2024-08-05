@@ -73,7 +73,7 @@ public class Grab_HCH : MonoBehaviour
 
                     // 일단 바뀔 타겟 오브젝트 스케일 값에 현재 타겟 오브젝트 스케일 값 저장
                     targetScale = target.localScale;
-
+                    target.gameObject.transform.SetParent(transform);
 
                     target.gameObject.layer = LayerMask.NameToLayer("Targeting");
                     //int targetingLayer = LayerMask.NameToLayer("Targeting");
@@ -95,6 +95,7 @@ public class Grab_HCH : MonoBehaviour
 
                 // 타겟을 삭제
                 target.gameObject.layer = LayerMask.NameToLayer("Targetable");
+                target.transform.parent = null;
                 //int targetingLayer = LayerMask.NameToLayer("Targetable");
                 //SetChildLayerRecursion(target.gameObject, targetingLayer);
                 target = null;

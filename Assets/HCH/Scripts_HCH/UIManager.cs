@@ -80,6 +80,7 @@ public class UIManager : MonoBehaviour
         // 마지막 엔딩 텍스트가 끝날 경우 엔딩 이미지 띄우기
         if (id == 3)
         {
+            GameManager.instance.player.gameObject.GetComponent<AudioSource>().enabled = false;
             EndingImage();
             yield return textDelay;
             BackToStartMenu();

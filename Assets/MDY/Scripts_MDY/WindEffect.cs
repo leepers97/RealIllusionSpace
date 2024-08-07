@@ -2,26 +2,41 @@ using UnityEngine;
 
 public class WindEffect : MonoBehaviour
 {
-    public Vector3 windDirection = new Vector3(1, 0, 0); // 바람의 방향 (기본적으로 오른쪽)
-    public float windStrength = 10f; // 바람의 강도
     private Rigidbody rb;
+    private Vector3 currentWindDirection;
+    private float currentWindStrength;
+    private bool isInWindZone1 = false;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>(); // Rigidbody 컴포넌트 가져오기
+        rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        ApplyWind();
+        if (isInWindZone1)
+        {
+            ApplyWindForce();
+        }
     }
 
-    private void ApplyWind()
+    public void ApplyWind(Vector3 direction, float strength)
+    {
+        currentWindDirection = direction;
+        currentWindStrength = strength;
+        isInWindZone1 = true;
+    }
+
+    public void RemoveWind()
+    {
+        isInWindZone1 = false;
+    }
+
+    private void ApplyWindForce()
     {
         if (rb != null)
         {
-            // 바람의 힘 적용
-            rb.AddForce(windDirection.normalized * windStrength);
+            rb.AddForce(currentWindDirection.normalized * currentWindStrength);
         }
     }
 }

@@ -3,18 +3,24 @@ using UnityEngine;
 public class CloneOnClick : MonoBehaviour
 {
     public Camera playerCamera; // 플레이어 카메라
+    private float clickCooldown = 0.2f; // 클릭 쿨다운 시간
+    private float lastClickTime = 0f; // 마지막 클릭 시간
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 클릭 시
+        if (Time.time - lastClickTime >= clickCooldown) // 쿨다운 시간이 지난 경우
         {
-            Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 클릭 시
             {
-                if (hit.collider.gameObject == gameObject && hit.collider.tag == "Clone")
+                Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    CloneObject(hit.collider.gameObject);
+                    if (hit.collider.gameObject == gameObject && hit.collider.CompareTag("Clone"))
+                    {
+                        CloneObject(hit.collider.gameObject);
+                        lastClickTime = Time.time; // 마지막 클릭 시간 갱신
+                    }
                 }
             }
         }
@@ -37,5 +43,18 @@ public class CloneOnClick : MonoBehaviour
         // 물체 복제 및 위치와 회전 설정
         GameObject clone = Instantiate(original, clonePosition, cloneRotation);
         clone.transform.localScale = original.transform.localScale;
+
+        // 복제된 오브젝트에서 CloneOnClick 스크립트를 비활성화하고 0.2초 후에 다시 활성화
+        var cloneScript = clone.GetComponent<CloneOnClick>();
+        if (cloneScript != null)
+        {
+            cloneScript.enabled = false;
+            cloneScript.Invoke("EnableScript", 0.3f);
+        }
+    }
+
+    void EnableScript()
+    {
+        this.enabled = true;
     }
 }

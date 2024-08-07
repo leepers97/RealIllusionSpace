@@ -145,7 +145,7 @@ public class Grab3_HCH : MonoBehaviour
                 grabbedObject.transform.SetParent(playerCamera.transform);
 
                 //Physics.IgnoreCollision(grabbedCollider, playerCollider, true);
-                IgnoreCollisionsWithPlayer(grabbedObject, true); // Ãæµ¹ ¹«½Ã ¼³Á¤
+                IgnoreCollisionsWithPlayer(grabbedObject, true); // ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
                 initialDistance = Vector3.Distance(playerCamera.transform.position, grabbedObject.GetComponent<Renderer>().bounds.center);
                 initialScale = grabbedObject.transform.localScale;
@@ -164,7 +164,7 @@ public class Grab3_HCH : MonoBehaviour
             dropDirection = (objectCenter - playerCamera.transform.position).normalized;
 
             //Physics.IgnoreCollision(grabbedCollider, playerCollider, false);
-            IgnoreCollisionsWithPlayer(grabbedObject, false); // Ãæµ¹ ¹«½Ã ÇØÁ¦
+            IgnoreCollisionsWithPlayer(grabbedObject, false); // ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
             // Check camera rotation before cloning the object

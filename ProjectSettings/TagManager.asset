@@ -9,6 +9,7 @@ TagManager:
   - Portal
   - Grab
   - Clone
+  - NoPass
   layers:
   - Default
   - TransparentFX

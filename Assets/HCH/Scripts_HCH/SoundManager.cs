@@ -23,7 +23,7 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         // 미리 담아둔 사운드 파일 딕셔너리에 넣기
         foreach (var soundResource in soundResources)

@@ -13,7 +13,8 @@ public class DividedCube_HCH : MonoBehaviour
     public void DivideCube()
     {
         // 함수가 호출되면 여러 개의 작은 큐브를 생성한다
-        GameObject dividedCube = Instantiate(cubePrefab, transform.position, Quaternion.identity);
+        //GameObject dividedCube = Instantiate(cubePrefab, transform.position, Quaternion.identity);
+        GameObject dividedCube = Instantiate(cubePrefab, transform.position, transform.rotation);
         // 생성된 큐브의 크기는 기존 큐브의 크기에 비례한다
         dividedCube.transform.localScale = transform.localScale / 3;
 

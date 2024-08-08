@@ -25,7 +25,7 @@ MonoBehaviour:
   luminanceThreshold:
     m_OverrideState: 0
     m_Value: 0
-  shader: {fileID: 0}
+  shader: {fileID: 4800000, guid: 0fd2fca24eaee21468e7f54b6ef8e2b9, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,4 +78,4 @@ MonoBehaviour:
   downscaling:
     m_OverrideState: 0
     m_Value: 2
-  shader: {fileID: 0}
+  shader: {fileID: 4800000, guid: fa78272576207e243bc6ec9f8a6c4f73, type: 3}

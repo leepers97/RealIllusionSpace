@@ -123,7 +123,7 @@ MonoBehaviour:
   scatterSoftKnee:
     m_OverrideState: 0
     m_Value: 0.5
-  shader: {fileID: 0}
+  shader: {fileID: 4800000, guid: 8080b34b2281e8945a5ddfe687d717fb, type: 3}
 --- !u!114 &-774880670821617431
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -233,4 +233,4 @@ MonoBehaviour:
   maintainAspectRatio:
     m_OverrideState: 0
     m_Value: 1
-  shader: {fileID: 0}
+  shader: {fileID: 4800000, guid: 174a3ec3133aefa4f891d0b2bba1bea1, type: 3}

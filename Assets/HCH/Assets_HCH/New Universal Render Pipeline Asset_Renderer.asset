@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9030982639397609028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c960d159794a6654cb06f83b44cbd79f, type: 3}
+  m_Name: Refraction
+  m_EditorClassIdentifier: 
+  active: 1
+  normalMap:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  amount:
+    m_OverrideState: 0
+    m_Value: 0
+  tint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 0.1}
+  shader: {fileID: 4800000, guid: be8d7ecc27b30e345b69f7dbcfebf586, type: 3}
 --- !u!114 &-8921461700711658677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +218,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7b05fc1dfd54667b40ffd24df20506c, type: 3}
-  m_Name: '[SCPE] CausticsRenderer'
+  m_Name: SCPE CausticsRenderer
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
@@ -202,6 +226,30 @@ MonoBehaviour:
     alwaysEnable: 0
     cameraTypes: 5
     skipTransparents: 0
+--- !u!114 &-3891628837627716151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c960d159794a6654cb06f83b44cbd79f, type: 3}
+  m_Name: Refraction
+  m_EditorClassIdentifier: 
+  active: 1
+  normalMap:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  amount:
+    m_OverrideState: 0
+    m_Value: 0
+  tint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 0.1}
+  shader: {fileID: 4800000, guid: be8d7ecc27b30e345b69f7dbcfebf586, type: 3}
 --- !u!114 &-3858235914893417438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +318,30 @@ MonoBehaviour:
     executionOrder: 0
     alwaysEnable: 0
     cameraTypes: 3
+--- !u!114 &-2037799773215994396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c960d159794a6654cb06f83b44cbd79f, type: 3}
+  m_Name: Refraction
+  m_EditorClassIdentifier: 
+  active: 1
+  normalMap:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  amount:
+    m_OverrideState: 0
+    m_Value: 0
+  tint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 0.1}
+  shader: {fileID: 4800000, guid: be8d7ecc27b30e345b69f7dbcfebf586, type: 3}
 --- !u!114 &-376374548442605373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +403,7 @@ MonoBehaviour:
   - {fileID: -7373792357223990369}
   - {fileID: -7724312520919605950}
   - {fileID: -4335067813269402499}
-  m_RendererFeatureMap: 816eb2df02932ea56d10913f26d62d8e
+  m_RendererFeatureMap: 816eb2df02932ea56d10913f26d62d8e22a41f91e0ca74ca6653792af0472e0166cd95b12e73679fa08f4daa2f35e644f7045c1dd23061cdf27035beda1bc48ce9c301d89b223f0be552ec178b30f2b0873aa51c14a031c3abc6a352e70cf211bb3932e86071b1022fd699b356ffb4a1831d14ee9d0f03dcc95c44bf8f0b0820787a1ec847a5ac6726af345955f0cf2d8814aa5eeabb35e3f8b90595ed8d147b4864b68b0184e842dd9ef8dc3ea4394f4b4bd4e3d9993084c39894a157d9c6fa9f7b2c4ceb06ab99421d7cf8afbacd947d0cd9c0cabed6c3
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -458,6 +530,30 @@ MonoBehaviour:
     cameraTypes: 5
     reconstructDepthNormals: 1
     skipTransparents: 0
+--- !u!114 &2849203549974217663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c960d159794a6654cb06f83b44cbd79f, type: 3}
+  m_Name: Refraction
+  m_EditorClassIdentifier: 
+  active: 1
+  normalMap:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  amount:
+    m_OverrideState: 0
+    m_Value: 0
+  tint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 0.1}
+  shader: {fileID: 4800000, guid: be8d7ecc27b30e345b69f7dbcfebf586, type: 3}
 --- !u!114 &3301121301245374246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,3 +656,27 @@ MonoBehaviour:
     executionOrder: 0
     alwaysEnable: 0
     cameraTypes: 5
+--- !u!114 &9050921900279422930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c960d159794a6654cb06f83b44cbd79f, type: 3}
+  m_Name: Refraction
+  m_EditorClassIdentifier: 
+  active: 1
+  normalMap:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  amount:
+    m_OverrideState: 0
+    m_Value: 0
+  tint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 0.1}
+  shader: {fileID: 4800000, guid: be8d7ecc27b30e345b69f7dbcfebf586, type: 3}

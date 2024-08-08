@@ -17,6 +17,19 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+                buttonAudioSource.PlayOneShot(buttonClickSound);
+                Application.Quit();
+#endif
+        }
     }
 }

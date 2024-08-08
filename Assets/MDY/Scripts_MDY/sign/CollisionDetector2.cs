@@ -19,6 +19,8 @@ public class CollisionDetector2 : MonoBehaviour
         if (collisionCount == 1)
         {
             objectCRenderer.material = collisionMaterial; // 충돌 시 메터리얼 
+            SoundManager.instance.PlaySound("ButtonSound", this.transform);
+            SoundManager.instance.PlaySound("BellSound", objectCRenderer.gameObject.transform);
         }
     }
 

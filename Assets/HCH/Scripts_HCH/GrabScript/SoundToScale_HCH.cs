@@ -9,8 +9,8 @@ using UnityEngine;
 
 public class SoundToScale_HCH : MonoBehaviour
 {
-    float upper = 4f;
-    float lower = 1f;
+    float upper = 3f;
+    float lower = 1.5f;
 
     private void OnCollisionEnter(Collision collision)
     {

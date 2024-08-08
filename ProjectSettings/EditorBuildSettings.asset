@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/HCH/Scenes_HCH/Main_HCH.unity
     guid: 175ab15200ee24042a8640d1b76ffafa
   - enabled: 1
-    path: Assets/HCH/Scenes_HCH/Map_HCH.unity
+    path: Assets/HCH/Scenes_HCH/Map_1_HCH.unity
+    guid: 8da2f4928df4b994190a383bb5c9cd09
+  - enabled: 1
+    path: Assets/HCH/Scenes_HCH/Map_2_HCH.unity
     guid: e638843e922e1004d94725b1c3d7d6ed
   m_configObjects: {}

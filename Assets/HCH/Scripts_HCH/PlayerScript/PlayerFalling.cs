@@ -26,7 +26,6 @@ public class PlayerFalling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(airTime);
         if (!groundCheck.isGrounded)
         {
             airTime += Time.deltaTime;

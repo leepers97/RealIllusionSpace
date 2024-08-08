@@ -53,6 +53,14 @@ public class UIManager : MonoBehaviour
         ending.SetActive(true);
     }
 
+    public void LoadNextScene()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        int curScene = scene.buildIndex;
+        int nextScene = curScene + 1;
+        SceneManager.LoadScene(nextScene);
+    }
+
     public void BackToStartMenu()
     {
         SceneManager.LoadScene("StartScene_HCH");

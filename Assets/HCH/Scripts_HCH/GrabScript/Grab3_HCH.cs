@@ -79,7 +79,8 @@ public class Grab3_HCH : MonoBehaviour
 
         if (isDropping)
         {
-            ContinueDropObject();
+            //ContinueDropObject();
+            ContinueDropObject2();
         }
     }
 
@@ -211,6 +212,7 @@ public class Grab3_HCH : MonoBehaviour
             grabbedObject.transform.localScale = newScale;
 
             Vector3 nextPosition = grabbedObject.transform.position + dropDirection * step;
+            //Instantiate(grabbedObject);
 
             RaycastHit hit;
             if (Physics.Raycast(nextPosition, Vector3.down, out hit, groundCheckDistance))
@@ -243,9 +245,72 @@ public class Grab3_HCH : MonoBehaviour
         }
     }
 
+    float step;
+    Vector3 currentPosition;
+    Vector3 nextPosition;
+    float posDist;
+    void ContinueDropObject2()
+    {
+        if (grabbedObject != null)
+        {
+            // ï¿½Ü°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            Outlinable outline = grabbedObject.GetComponent<Outlinable>();
+            outline.enabled = false;
+
+            grabbedObject.transform.SetParent(null);
+            step = moveSpeed * dropMoveSpeedMultiplier * Time.deltaTime;
+            currentPosition = grabbedObject.GetComponent<Renderer>().bounds.center;
+            float currentDistance = Vector3.Distance(playerCamera.transform.position, currentPosition);
+
+            float scaleMultiplier = currentDistance / initialDistance;
+            Vector3 newScale = new Vector3(
+                Mathf.Max(initialScale.x * scaleMultiplier, minScale),
+                Mathf.Max(initialScale.y * scaleMultiplier, minScale),
+                Mathf.Max(initialScale.z * scaleMultiplier, minScale)
+            );
+            grabbedObject.transform.localScale = newScale;
+
+            nextPosition = grabbedObject.transform.position + dropDirection * step;
+            //Instantiate(grabbedObject);
+
+            RaycastHit hit;
+            if (Physics.Raycast(nextPosition, Vector3.down, out hit, groundCheckDistance))
+            {
+                if (Vector3.Dot(hit.normal, Vector3.up) > 0.7f)
+                {
+                    nextPosition.y = hit.point.y + (grabbedObject.GetComponent<Collider>().bounds.extents.y);
+                }
+            }
+
+            if (IsPositionValid(nextPosition))
+            {
+                grabbedObject.transform.position = nextPosition;
+            }
+            else
+            {
+                isDropping = false;
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                SoundManager.instance.PlaySound("GrabEnd", this.transform);
+
+                grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+                // ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ä¸µ
+                if (grabbedObject.CompareTag("DivideCube"))
+                {
+                    grabbedObject.GetComponent<DividedCube_HCH>().DivideCube();
+                }
+                grabbedObject = null;
+                Destroy(clonedObject);
+            }
+        }
+    }
+
+    // ÇöÀç À§Ä¡¿¡¼­ nextpositionÀ¸·Î ray¸¦ ½÷¼­ ¸Â´Â°Ô ÀÖ´Ù¸é ½ºÅ¾
     bool IsPositionValid(Vector3 position)
     {
+        //Vector3 adjustPos = position + dropDirection.normalized * 0.1f;
         Collider[] colliders = Physics.OverlapBox(position, grabbedCollider.bounds.extents, grabbedObject.transform.rotation);
+        //Collider[] colliders = Physics.OverlapBox(adjustPos, grabbedCollider.bounds.extents, grabbedObject.transform.rotation);
+
         foreach (Collider collider in colliders)
         {
             if (collider.gameObject != grabbedObject)
@@ -253,7 +318,18 @@ public class Grab3_HCH : MonoBehaviour
                 return false;
             }
         }
+
+        RaycastHit hit;
+        posDist = Vector3.Distance(currentPosition, nextPosition);
+        if (Physics.Raycast(currentPosition, nextPosition - currentPosition, out hit, posDist))
+        {
+            if (hit.collider != null)
+            {
+                return false;
+            }
+        }
         return true;
+
     }
 
     //bool IsGrounded()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,9 +28,21 @@ public class GameManager : MonoBehaviour
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
-                buttonAudioSource.PlayOneShot(buttonClickSound);
                 Application.Quit();
 #endif
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene(2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SceneManager.LoadScene(3);
         }
     }
 }

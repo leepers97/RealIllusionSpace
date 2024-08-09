@@ -19,6 +19,7 @@ public class CloneOnClick : MonoBehaviour
                     if (hit.collider.gameObject == gameObject && hit.collider.CompareTag("Clone"))
                     {
                         CloneObject(hit.collider.gameObject);
+                        SoundManager.instance.PlaySound("GrabStart", transform.position);
                         lastClickTime = Time.time; // 마지막 클릭 시간 갱신
                     }
                 }

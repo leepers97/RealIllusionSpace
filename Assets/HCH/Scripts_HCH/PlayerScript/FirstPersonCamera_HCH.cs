@@ -22,7 +22,7 @@ public class FirstPersonCamera_HCH : MonoBehaviour
     void Start()
     {
         // Lock the mouse cursor to the game screen.
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()

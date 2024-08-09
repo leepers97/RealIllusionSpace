@@ -272,4 +272,4 @@ MonoBehaviour:
   luminanceThreshold:
     m_OverrideState: 1
     m_Value: 0
-  shader: {fileID: 0}
+  shader: {fileID: 4800000, guid: 0fd2fca24eaee21468e7f54b6ef8e2b9, type: 3}

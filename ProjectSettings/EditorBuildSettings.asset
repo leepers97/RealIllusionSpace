@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/HCH/Scenes_HCH/StartScene_HCH.unity
     guid: 0cb42643fedc1794fa0a6f0d08d169e0
   - enabled: 0
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HCH/Scenes_HCH/Map_2_HCH.unity
     guid: e638843e922e1004d94725b1c3d7d6ed
+  - enabled: 1
+    path: Assets/MDY/Scenes_MDY/Main_MDY.unity
+    guid: b7cecfbc01e07497da7d2476942ab4f7
   m_configObjects: {}
